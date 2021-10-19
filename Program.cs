@@ -79,13 +79,14 @@ namespace Homework_Theme_04
             //Задание №3
 
             Console.WriteLine("Здравствуйте! Давайте поиграем в игру. Я загадываю число, а Вы угадываете. \nВведите максимальное значение...");
+            Console.WriteLine("\nДля выхода нажмите Enter");
             Random rand = new Random();
             int maxValue = int.Parse(Console.ReadLine());
             int findNumber = rand.Next(0, maxValue);
 
             do
             {
-                Console.WriteLine("Я загадал число, Введите Ваш ответ");
+                Console.WriteLine("\nЯ загадал число, Введите Ваш ответ");
                 
                 int userNumber = Convert.ToInt32(Console.ReadLine());
                 
@@ -104,13 +105,9 @@ namespace Homework_Theme_04
                     Console.ReadKey();
                     break;
                 }
-                //else if (Console.ReadKey().Key == ConsoleKey.Enter)           // эта часть кода не работает
-                //{                                                             //не ясно как закончить игру при нажатии Enter
-                //    return;
-                //}
-                
+                               
             }
-            while (true);
+            while (Console.ReadKey().Key != ConsoleKey.Enter);
 
         }
     }
